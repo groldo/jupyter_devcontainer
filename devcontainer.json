@@ -1,11 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/jupyter-datascience-notebooks
 {
-	"name": "Jupyter Data Science Notebooks (Community)",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"overrideCommand": false,
+	"name": "Jupyter",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "jupyter",
+	"workspaceFolder": "/workspace",
 	
 	// Forward Jupyter port locally, mark required
 	"forwardPorts": [8888],
@@ -17,6 +16,19 @@
 		}
 	},
 
+	"extensions": [
+		"ms-python.python",
+		"2gua.rainbow-brackets",
+		"AppulateInc.filewatcher",
+		"DavidAnson.vscode-markdownlint",
+		"eamodio.gitlens",
+		"EditorConfig.EditorConfig",
+		"James-Yu.latex-workshop",
+		"MS-CEINTL.vscode-language-pack-de",
+		"oderwat.indent-rainbow",
+		"yzhang.markdown-all-in-one"
+	],
+
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -24,12 +36,7 @@
 			// Set *default* container specific settings.json values on container create.
 			"settings": { 
 				"python.defaultInterpreterPath": "/opt/conda/bin/python"
-			},
-			
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"ms-python.python"
-			]
+			}
 		}
 	},
 

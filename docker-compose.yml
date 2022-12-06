@@ -1,0 +1,12 @@
+version: '3'
+
+volumes: 
+  home:
+
+services:
+  jupyter:
+    build: .
+    volumes:
+      - home:/home/jovyan
+      - $HOME/.ssh:/home/jovyan/.ssh
+      - ..:/workspace:cached
