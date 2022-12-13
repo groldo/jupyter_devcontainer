@@ -1,1 +1,4 @@
 tabulate
+graphviz
+pylint
+mypy
