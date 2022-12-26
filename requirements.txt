@@ -2,3 +2,4 @@ tabulate
 graphviz
 pylint
 mypy
+autopep8
