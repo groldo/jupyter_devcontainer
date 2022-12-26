@@ -21,7 +21,6 @@
 		"2gua.rainbow-brackets",
 		"AppulateInc.filewatcher",
 		"DavidAnson.vscode-markdownlint",
-		"eamodio.gitlens",
 		"EditorConfig.EditorConfig",
 		"James-Yu.latex-workshop",
 		"MS-CEINTL.vscode-language-pack-de",
@@ -39,7 +38,17 @@
 			}
 		}
 	},
-
+	"features": {
+		"common": {
+			"username": "automatic",
+			"uid": "automatic",
+			"gid": "automatic",
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true,
+			"nonFreePackages": false
+		}
+	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 
