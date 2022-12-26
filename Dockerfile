@@ -30,13 +30,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 			wget
 
 # Set the locale
-RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \
-	locale-gen
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-	locale-gen
-ENV LANG de_DE.UTF-8
-ENV LANGUAGE de_DE:de
-ENV LC_ALL de_DE.UTF-8
+RUN locale-gen "de_DE.UTF-8"
+#RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \
+#	locale-gen
+#RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+#	locale-gen
+#ENV LANG de_DE.UTF-8
+#ENV LANGUAGE de_DE:de
+#ENV LC_ALL de_DE.UTF-8
 
 RUN mkdir -p /usr/share/pandoc/data/templates && \
 	wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/master/eisvogel.tex \
