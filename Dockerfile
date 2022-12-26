@@ -1,6 +1,6 @@
 # See here for image contents: https://hub.docker.com/r/jupyter/datascience-notebook/
 
-FROM jupyter/datascience-notebook
+FROM jupyter/datascience-notebook:2022-12-13
 
 # We want to run common-debian.sh from here:
 # https://github.com/microsoft/vscode-dev-containers/tree/main/script-library#development-container-scripts
