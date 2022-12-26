@@ -10,3 +10,5 @@ services:
       - home:/home/jovyan
       - $HOME/.ssh:/home/jovyan/.ssh
       - ..:/workspace:cached
+    command: "start-notebook.sh \
+        --ServerApp.root_dir=/workspace"
