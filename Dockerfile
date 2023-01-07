@@ -43,6 +43,11 @@ RUN mkdir -p /usr/share/pandoc/data/templates && \
 	wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/master/eisvogel.tex \
 	-O /usr/share/pandoc/data/templates/eisvogel.latex
 
+RUN wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.13.0b/pandoc-crossref-Linux.tar.xz \
+			-O /tmp/pandoc-crossref-Linux.tar.xz && \
+			(cd /tmp && tar xf pandoc-crossref-Linux.tar.xz) && \
+			mv /tmp/pandoc-crossref /usr/local/bin/
+
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 COPY requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
