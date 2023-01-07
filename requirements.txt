@@ -3,3 +3,4 @@ graphviz
 pylint
 mypy
 autopep8
+openai # chatgpt python api: https://openai.com/blog/chatgpt/
