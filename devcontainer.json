@@ -5,7 +5,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "jupyter",
 	"workspaceFolder": "/workspace",
-	"forwardPorts": [8888],
+  "forwardPorts": [8888],
 	"portsAttributes": {
 		"8888": {
 			"label": "Jupyter",
@@ -15,39 +15,33 @@
 	},
 	"customizations": {
 		"vscode": {
-			"settings": { 
-				"python.defaultInterpreterPath": "/opt/conda/bin/python"
-			}
-		},
-		"extensions": [
-			"2gua.rainbow-brackets",
-			"appulate.filewatcher",
-			"DavidAnson.vscode-markdownlint",
-			"EditorConfig.EditorConfig",
-			"James-Yu.latex-workshop",
-			"MS-CEINTL.vscode-language-pack-de",
-			"ms-python.isort",
-			"ms-python.python",
-			"ms-python.vscode-pylance",
-			"ms-toolsai.jupyter",
-			"ms-toolsai.jupyter-keymap",
-			"ms-toolsai.jupyter-renderers",
-			"ms-toolsai.vscode-jupyter-cell-tags",
-			"ms-toolsai.vscode-jupyter-slideshow",
-			"oderwat.indent-rainbow",
-			"yzhang.markdown-all-in-one"
-		]
-	},
-	"features": {
-		"common": {
-			"username": "automatic",
-			"uid": "automatic",
-			"gid": "automatic",
-			"installZsh": true,
-			"installOhMyZsh": true,
-			"upgradePackages": true,
-			"nonFreePackages": false
-		}
-	},
-	"remoteUser": "jovyan"
+			"settings": {
+						"python.defaultInterpreterPath": "/opt/conda/bin/python"
+					},
+			"extensions": [
+				"appulate.filewatcher",
+				"DavidAnson.vscode-markdownlint",
+				"EditorConfig.EditorConfig",
+				"James-Yu.latex-workshop",
+				"MS-CEINTL.vscode-language-pack-de",
+				"ms-python.isort",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.vscode-jupyter-slideshow",
+				"oderwat.indent-rainbow",
+				"yzhang.markdown-all-in-one"
+			]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "jovyan",
+      "installZsh": true,
+      "installOhMyZsh": true
+    }
+  }
 }
