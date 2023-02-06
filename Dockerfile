@@ -1,6 +1,6 @@
 # See here for image contents: https://hub.docker.com/r/jupyter/datascience-notebook/
 
-FROM jupyter/datascience-notebook:2022-12-13
+FROM jupyter/datascience-notebook:2023-01-30
 
 # We want to run common-debian.sh from here:
 # https://github.com/microsoft/vscode-dev-containers/tree/main/script-library#development-container-scripts
@@ -9,10 +9,10 @@ FROM jupyter/datascience-notebook:2022-12-13
 COPY library-scripts/common-debian.sh /tmp/library-scripts/
 USER root
 RUN apt-get update \
- && groupadd jovyan \
- && usermod -g jovyan -a -G users jovyan \
- && bash /tmp/library-scripts/common-debian.sh \
- && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+  && groupadd jovyan \
+  && usermod -g jovyan -a -G users jovyan \
+  && bash /tmp/library-scripts/common-debian.sh \
+  && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # ** [Optional] Uncomment this section to install additional packages. **
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -51,7 +51,6 @@ RUN wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.13.
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 COPY requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-   && rm -rf /tmp/pip-tmp
+      && rm -rf /tmp/pip-tmp
 
 USER jovyan
-
