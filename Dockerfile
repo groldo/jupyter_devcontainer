@@ -17,17 +17,19 @@ RUN apt-get update \
 # ** [Optional] Uncomment this section to install additional packages. **
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 	&& apt-get -y install --no-install-recommends texlive-latex-recommended \
+                        texlive-bibtex-extra \
                         texlive-latex-extra \
                         texlive-lang-german \
                         tex-common \
                         texlive-fonts-extra \
                         texlive-science \
                         texlive-xetex \
+                        biber \
                         locales \
-			pandoc \
-			latexmk \
-			lmodern \
-			wget
+                        pandoc \
+                        latexmk \
+                        lmodern \
+                        wget
 
 # Set the locale
 RUN locale-gen "de_DE.UTF-8"
